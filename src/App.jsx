@@ -98,19 +98,15 @@ function App() {
           </MDBCol>
         </MDBRow>
         <MDBRow>
-          <MDBCol
+          <MDBSortable
           >
 
             {
               fields.map((field, index) => {
                 return (
-                  <MDBRow
+                  <MDBSortableElement
                     key={index}
                     className="align-middle"
-                    draggable={true}
-                    onDragStart={(e) => dragStart(e, index)}
-                    onDragOver={(e) => dragOver(e)}
-                    onDrop={(e) => drop(e, index)}
                   >
                     <MDBCard>
                       <MDBCardBody>
@@ -376,12 +372,12 @@ function App() {
                         </MDBRow>
                       </MDBCardBody>
                     </MDBCard>
-                  </MDBRow>
+                  </MDBSortableElement>
                 )
               })
             }
 
-          </MDBCol>
+          </MDBSortable>
         </MDBRow>
 
       </MDBContainer>
